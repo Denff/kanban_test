@@ -1,0 +1,14 @@
+.note  {
+    textarea {
+        resize : none;
+        padding: 10px;
+        border-color: transparent;
+        background-color: transparent;
+        width: 100%;
+        &:focus,
+        &:active {
+            outline: none;
+            background-color: #ffffff;
+        }
+    }
+}

@@ -1,0 +1,136 @@
+.columns {
+	display: flex;
+    justify-content: flex-start;
+}
+
+.column {
+    margin: 0 40px 0 0;
+    flex: 1;
+    padding: 10px 0;
+    position: relative;
+    transition: width 0.3s;
+    min-width: 200px;
+    max-width: 450px;
+    min-height: auto;
+    border-radius: 4px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    /* border: 1px dashed red; */
+}
+.column:last-child {
+     margin: 0;
+}
+
+
+
+
+.column-header__container {
+    flex: 0 0 auto;
+    width: 100%;
+    align-self: flex-start;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgb(82, 106, 122);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.column-header {
+    flex: 1 0 auto;
+    margin: 0 5px;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    &:focus {
+        outline:none;
+        background-color: #F5F5F5;
+    }
+}
+
+.column-header::before {
+    position: absolute;
+    content: '';
+    top: 55%;
+    right: 5px;
+    width: 14px;
+    height: 15px;
+    transform: translate3d(0, -50%, 0);
+    background-image: url('../img/edit.svg');
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.2s;
+}
+.column-header.edit::before {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+
+.delete-column {
+    flex: 0 0 auto;
+    display: block;
+    width: 14px;
+    height: 15px;
+    text-indent: -99999px;
+    padding: 0;
+    background-image: url('../img/trash.svg');
+    cursor: pointer;
+}
+.process-icon {
+    flex: 0 0 auto;
+    top: 10px;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -99999px;
+    padding: 0;
+    background-image: url('../img/backlog.svg'); 
+}
+
+
+
+
+.column.dragged {
+	opacity: 0.4;
+}
+
+
+.column.under {
+	margin-top: 20px;
+}
+
+
+.column-footer .action {
+    background-color: #D0D0D0;
+    position: relative;
+    color: transparent;
+    transition: all 0.3s;
+}
+.column-footer .action:hover {
+    background-color: #7EA4E7;
+}
+.column-footer .action::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 14px;
+    background-color: #fff;
+    transform: translate3d(-50%, -50%, 0);
+} 
+.column-footer .action::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    background-color: #fff;
+    transform: translate3d(-50%, -50%, 0);
+} 
